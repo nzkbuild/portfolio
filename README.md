@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![Portfolio Banner](./public/portfolio-banner.svg)
 
 **Builder from HR and operations into automation and web development**
 
