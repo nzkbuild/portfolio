@@ -141,7 +141,14 @@ const skills = {
 
 // --- SMALL COMPONENTS ---
 
-const NavLink = ({ href, children, onClick, isMobile = false }) => (
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+  isMobile?: boolean;
+}
+
+const NavLink = ({ href, children, onClick, isMobile = false }: NavLinkProps) => (
   <a
     href={href}
     onClick={(e) => {
@@ -162,7 +169,12 @@ const NavLink = ({ href, children, onClick, isMobile = false }) => (
   </a>
 );
 
-const SectionHeader = ({ title, subtitle }) => (
+interface SectionHeaderProps {
+  title: string;
+  subtitle?: string;
+}
+
+const SectionHeader = ({ title, subtitle }: SectionHeaderProps) => (
   <div className="mb-12">
     <h2 className="text-2xl md:text-3xl font-bold text-slate-100 mb-3">
       {title}
