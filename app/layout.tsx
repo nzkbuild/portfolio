@@ -3,6 +3,7 @@ import "./globals.css";
 
 export const viewport: Viewport = {
   themeColor: "#020617",
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
