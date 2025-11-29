@@ -3,8 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "nzkbuild - Portfolio",
-  description:
-    "ProtAcgAc trainee at KWSP Kluang building internal tools. From trading automation to web development - learning through practical problem-solving.",
+  description: "Protégé trainee at KWSP Kluang building internal tools. From trading bots to full-stack web apps.",
 };
 
 export default function RootLayout({
