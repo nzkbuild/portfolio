@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "nzkbuild - Portfolio",
-  description: "Portfolio of Nabil - Early-career builder with HR and operations background",
+  description:
+    "ProtAcgAc trainee at KWSP Kluang building internal tools. From trading automation to web development - learning through practical problem-solving.",
 };
 
 export default function RootLayout({
@@ -17,4 +18,3 @@ export default function RootLayout({
     </html>
   );
 }
-

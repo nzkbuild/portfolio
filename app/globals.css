@@ -1,2 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-secondary antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-text-primary font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-glass-border;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
