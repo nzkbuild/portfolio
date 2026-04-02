@@ -1,6 +1,6 @@
 "use client";
 
-import StatusPill from "@/app/components/StatusPill";
+
 import { Activity, Github, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { FadeIn, StaggerContainer, fadeInItem } from "@/components/ui/motion";
@@ -31,7 +31,7 @@ export default function SNRXPage() {
               <div className="p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
                 <Activity size={28} className="text-emerald-400" />
               </div>
-              <StatusPill status="Completed" variant="completed" />
+              <span className="text-xs font-mono text-status-success uppercase tracking-widest border border-status-success/20 px-3 py-1 rounded-full">Completed</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight">

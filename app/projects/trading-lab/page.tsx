@@ -1,6 +1,6 @@
 "use client";
 
-import StatusPill from "@/app/components/StatusPill";
+
 import { Bot, Github, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { FadeIn, StaggerContainer, fadeInItem } from "@/components/ui/motion";
@@ -43,7 +43,7 @@ export default function TradingLabPage() {
               <div className="p-3 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
                 <Bot size={28} className="text-yellow-400" />
               </div>
-              <StatusPill status="Experimental" variant="experimental" />
+              <span className="text-xs font-mono text-status-warning uppercase tracking-widest border border-status-warning/20 px-3 py-1 rounded-full">Experimental</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6 leading-tight">
