@@ -26,17 +26,30 @@ export function Timeline() {
                                 <div
                                     className={cn(
                                         "absolute left-0 ml-2.5 -translate-x-1/2 mt-1.5 w-4 h-4 rounded-full border-4 border-bg-primary z-10 transition-all duration-300",
-                                        index === timelineData.length - 3
-                                            ? "bg-accent-blue shadow-[0_0_12px_var(--accent-blue)] scale-125"
+                                        index === 0 // Assuming index 0 is current or most recent
+                                            ? "bg-accent-blue shadow-[0_0_15px_var(--accent-blue)] scale-125"
                                             : "bg-white/20 group-hover:bg-accent-blue"
                                     )}
                                 />
                                 <div className="pl-12 w-full">
-                                    <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-colors group-hover:translate-x-1 duration-300 backdrop-blur-sm">
-                                        <span className="text-xs font-bold tracking-wider text-accent-blue uppercase mb-3 block">
-                                            {item.date}
-                                        </span>
-                                        <h4 className="text-xl font-bold text-text-primary mb-3">
+                                    <div className="bg-bg-surface1/60 p-8 rounded-3xl border border-white/5 hover:border-white/10 transition-all group-hover:translate-x-2 duration-300 backdrop-blur-xl shadow-sm">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
+                                            <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold tracking-wider text-accent-blue uppercase w-fit">
+                                                <span className={cn(
+                                                    "w-1.5 h-1.5 rounded-full",
+                                                    item.type === "education" ? "bg-purple-400" : "bg-status-success"
+                                                )}></span>
+                                                {item.date}
+                                            </span>
+                                            <span className="text-sm font-medium text-text-muted flex items-center gap-2">
+                                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                {item.location}
+                                            </span>
+                                        </div>
+                                        <h4 className="text-2xl font-display font-bold text-text-primary mb-4">
                                             {item.title}
                                         </h4>
                                         <p className="text-text-secondary text-lg leading-relaxed">

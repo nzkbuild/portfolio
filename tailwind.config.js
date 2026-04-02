@@ -9,32 +9,33 @@ module.exports = {
     extend: {
       colors: {
         bg: {
-          primary: "#000000",
-          surface0: "#050505",
-          surface1: "#0A0A0A",
-          surface2: "#121212",
+          primary: "#030712", // slate-950
+          surface0: "#020617", // slate-950 darker
+          surface1: "#0f172a", // slate-900
+          surface2: "#1e293b", // slate-800
         },
         text: {
-          primary: "#FFFFFF",
-          secondary: "#A1A1AA", // Zinc-400
-          muted: "#71717A",    // Zinc-500
+          primary: "#f8fafc", // slate-50
+          secondary: "#94a3b8", // slate-400
+          muted: "#64748b",    // slate-500
         },
         accent: {
-          blue: "#2997FF",
-          hover: "#007AFF",
-          dim: "rgba(41, 151, 255, 0.15)",
+          blue: "#38bdf8", // light blue
+          hover: "#0284c7", // sky 600
+          dim: "rgba(56, 189, 248, 0.15)",
         },
         status: {
-          success: "#30D158",
-          warning: "#FFD60A",
-          error: "#FF453A",
+          success: "#22c55e",
+          warning: "#eab308",
+          error: "#ef4444",
         },
         glass: {
           border: "rgba(255, 255, 255, 0.08)",
         }
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-outfit)", "sans-serif"],
       },
       spacing: {
         '18': '4.5rem',
