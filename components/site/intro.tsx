@@ -9,14 +9,14 @@ const links = [
 
 export function Intro() {
  return (
- <section className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
- <p className="mb-6 text-xs uppercase tracking-[0.18em] text-faint">
+ <section className="mx-auto max-w-3xl px-6 py-16 sm:py-28">
+ <p className="mb-5 text-xs uppercase tracking-[0.18em] text-faint">
  Johor Bahru, Malaysia &middot; Open to work
  </p>
- <h1 className="text-pretty font-serif text-4xl leading-[1.1] text-ink sm:text-5xl">
+ <h1 className="text-pretty font-serif text-[2rem] leading-[1.12] text-ink sm:text-5xl sm:leading-[1.08]">
  Operations and admin, with a habit of building tools.
  </h1>
- <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted">
+ <div className="mt-7 max-w-prose space-y-4 text-base leading-relaxed text-muted sm:mt-8 sm:space-y-5 sm:text-lg">
  <p>
  I am Nabil, a Business Administration graduate. My background is in
  records, documentation, and member service, and I build simple,
@@ -34,7 +34,7 @@ export function Intro() {
  documents, numbers, and dates of everyday life in one place.
  </p>
  </div>
- <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+ <div className="-mx-2 mt-9 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:mt-10">
  {links.map((l) => {
  const Icon = l.icon;
  return (
@@ -43,7 +43,7 @@ export function Intro() {
  href={l.href}
  target={l.external ? "_blank" : undefined}
  rel={l.external ? "noopener noreferrer" : undefined}
- className="inline-flex items-center gap-2 text-muted transition-colors hover:text-ink"
+ className="inline-flex items-center gap-2 px-2 py-2 text-muted transition-colors hover:text-ink"
  >
  <Icon size={16} strokeWidth={1.75} />
  {l.label}
