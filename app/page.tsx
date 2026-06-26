@@ -1,5 +1,6 @@
 import { Header } from "@/components/site/header";
 import { Intro } from "@/components/site/intro";
+import { Value } from "@/components/site/value";
 import { Work } from "@/components/site/work";
 import { Background } from "@/components/site/background";
 import { Contact } from "@/components/site/contact";
@@ -10,6 +11,7 @@ export default function Home() {
  <Header />
  <main>
  <Intro />
+ <Value />
  <Work />
  <Background />
  <Contact />
