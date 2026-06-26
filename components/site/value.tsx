@@ -2,7 +2,7 @@ import { Reveal } from "@/components/site/reveal";
 
 const proof = [
  { label: "Live on Google Play", note: "Boring App, shipped solo" },
- { label: "In daily use", note: "KIOS, built at KWSP" },
+ { label: "Live for a client", note: "Insurance landing page" },
  { label: "Design to deploy", note: "I own the whole build" },
 ];
 
