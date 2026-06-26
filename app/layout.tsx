@@ -12,10 +12,10 @@ const newsreader = Newsreader({
 
 const siteUrl = "https://www.nzkbuild.xyz";
 
-const themeScript = `(function(){try{document.documentElement.classList.add("js");var t=localStorage.getItem("theme");var m=window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&m)){document.documentElement.classList.add("dark");}}catch(e){}})();`;
+const themeScript = `(function(){try{document.documentElement.classList.add("js");var t=localStorage.getItem("theme");if(t!=="light"){document.documentElement.classList.add("dark");}}catch(e){}})();`;
 
 export const viewport: Viewport = {
- colorScheme: "light dark",
+ colorScheme: "dark light",
  width: "device-width",
  initialScale: 1,
 };

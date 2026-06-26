@@ -1,5 +1,11 @@
 import { Reveal } from "@/components/site/reveal";
 
+const proof = [
+ { label: "Live on Google Play", note: "Boring App, shipped solo" },
+ { label: "In daily use", note: "KIOS, built at KWSP" },
+ { label: "Design to deploy", note: "I own the whole build" },
+];
+
 const pillars = [
  {
  n: "01",
@@ -18,8 +24,6 @@ const pillars = [
  },
 ];
 
-const tech = ["React", "Next.js", "TypeScript", "Supabase", "Capacitor", "Python", "Tailwind CSS", "Git", "Vercel"];
-
 export function Value() {
  return (
  <section id="approach" className="border-t border-line">
@@ -28,7 +32,18 @@ export function Value() {
  Why work with me
  </h2>
 
- <div className="flex flex-col divide-y divide-line">
+ <Reveal>
+ <dl className="grid grid-cols-1 gap-x-8 gap-y-5 border-b border-line pb-10 sm:grid-cols-3">
+ {proof.map((p) => (
+ <div key={p.label}>
+ <dt className="font-serif text-lg text-ink">{p.label}</dt>
+ <dd className="mt-1 text-sm text-faint">{p.note}</dd>
+ </div>
+ ))}
+ </dl>
+ </Reveal>
+
+ <div className="mt-10 flex flex-col divide-y divide-line">
  {pillars.map((p, i) => (
  <Reveal key={p.n} delay={i * 80}>
  <div className="grid gap-2 py-8 first:pt-0 sm:grid-cols-[4rem_1fr] sm:gap-6">
@@ -41,22 +56,6 @@ export function Value() {
  </Reveal>
  ))}
  </div>
-
- <Reveal delay={120}>
- <div className="mt-12 border-t border-line pt-8">
- <p className="mb-4 text-sm text-faint">Tools I build with</p>
- <ul className="flex flex-wrap gap-2">
- {tech.map((t) => (
- <li
- key={t}
- className="rounded-full border border-line px-3 py-1 text-sm text-muted transition-colors hover:border-accent/40 hover:text-ink"
- >
- {t}
- </li>
- ))}
- </ul>
- </div>
- </Reveal>
  </div>
  </section>
  );

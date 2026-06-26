@@ -1,78 +1,87 @@
-import { Mail, Linkedin, Github, FileText } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
-const links = [
- { label: "Email", href: "mailto:nbzkri@gmail.com", external: false, icon: Mail },
- { label: "LinkedIn", href: "https://www.linkedin.com/in/nbzkri/", external: true, icon: Linkedin },
- { label: "GitHub", href: "https://github.com/nzkbuild", external: true, icon: Github },
- { label: "R\u00e9sum\u00e9", href: "https://www.linkedin.com/in/nbzkri/", external: true, icon: FileText },
-];
-
-const proof = [
- { label: "Live on Google Play", note: "Boring App, shipped solo" },
- { label: "In daily use", note: "KIOS, built at KWSP" },
- { label: "Design to deploy", note: "I own the whole build" },
+const secondary = [
+ { label: "LinkedIn", href: "https://www.linkedin.com/in/nbzkri/" },
+ { label: "GitHub", href: "https://github.com/nzkbuild" },
+ { label: "R\u00e9sum\u00e9", href: "https://www.linkedin.com/in/nbzkri/" },
 ];
 
 export function Intro() {
  return (
- <section className="mx-auto max-w-3xl px-6 py-20 sm:py-32">
- <p
- className="rise mb-6 text-xs uppercase tracking-[0.18em] text-faint"
+ <section className="mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center sm:py-32">
+ <div
+ className="rise flex h-16 w-16 items-center justify-center rounded-full border border-line font-serif text-xl text-ink"
  style={{ animationDelay: "0ms" }}
  >
- Johor Bahru, Malaysia &middot; Open to work
+ NZ
+ </div>
+
+ <p
+ className="rise mt-6 inline-flex items-center gap-2 text-sm text-muted"
+ style={{ animationDelay: "80ms" }}
+ >
+ <span className="relative flex h-2 w-2">
+ <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+ <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+ </span>
+ Hi, I am Nabil &mdash; available for work
  </p>
+
  <h1
- className="rise text-balance font-serif text-[2.5rem] leading-[1.05] text-ink sm:text-[4rem] sm:leading-[1.02]"
- style={{ animationDelay: "90ms" }}
+ className="rise mt-7 text-balance font-serif text-[clamp(2.5rem,7vw,5rem)] leading-[1.04] text-ink"
+ style={{ animationDelay: "160ms" }}
  >
  I turn messy operations into software that ships.
  </h1>
+
  <p
- className="rise mt-8 max-w-prose text-lg leading-relaxed text-muted sm:text-xl"
- style={{ animationDelay: "180ms" }}
+ className="rise mt-7 max-w-xl text-pretty text-lg leading-relaxed text-muted sm:text-xl"
+ style={{ animationDelay: "240ms" }}
  >
- I am Nabil, operations and admin by training and a builder by habit. I
- shipped{" "}
- <a
- href="#work"
- className="text-ink underline decoration-1 underline-offset-4 transition-[text-decoration-thickness] hover:decoration-2"
- >
- Boring App
- </a>{" "}
+ Operations and admin by training, a builder by habit. I shipped Boring App
  to Google Play on my own, and I build internal tools that replace
  spreadsheet chaos.
  </p>
- <dl
- className="rise mt-10 grid grid-cols-1 gap-x-8 gap-y-4 border-t border-line pt-6 sm:grid-cols-3"
- style={{ animationDelay: "260ms" }}
- >
- {proof.map((p) => (
- <div key={p.label}>
- <dt className="text-sm font-medium text-ink">{p.label}</dt>
- <dd className="mt-0.5 text-xs text-faint">{p.note}</dd>
- </div>
- ))}
- </dl>
+
  <div
- className="rise -mx-2 mt-10 flex flex-wrap items-center gap-x-1 gap-y-1 text-sm"
- style={{ animationDelay: "340ms" }}
+ className="rise mt-10 flex flex-wrap items-center justify-center gap-3"
+ style={{ animationDelay: "320ms" }}
  >
- {links.map((l) => {
- const Icon = l.icon;
- return (
+ <a
+ href="#work"
+ className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform active:scale-95"
+ >
+ View my work
+ <ArrowUpRight
+ size={16}
+ strokeWidth={2}
+ className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+ />
+ </a>
+ <a
+ href="mailto:nbzkri@gmail.com"
+ className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-ink/5 active:scale-95"
+ >
+ <Mail size={16} strokeWidth={1.75} />
+ Get in touch
+ </a>
+ </div>
+
+ <div
+ className="rise mt-7 flex items-center justify-center gap-5 text-sm text-muted"
+ style={{ animationDelay: "380ms" }}
+ >
+ {secondary.map((l) => (
  <a
  key={l.label}
  href={l.href}
- target={l.external ? "_blank" : undefined}
- rel={l.external ? "noopener noreferrer" : undefined}
- className="inline-flex items-center gap-2 rounded-lg px-2 py-2 text-muted transition-all hover:bg-ink/5 hover:text-ink active:scale-95"
+ target="_blank"
+ rel="noopener noreferrer"
+ className="underline decoration-line underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
  >
- <Icon size={16} strokeWidth={1.75} />
  {l.label}
  </a>
- );
- })}
+ ))}
  </div>
  </section>
  );
