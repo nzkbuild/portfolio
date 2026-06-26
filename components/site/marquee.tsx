@@ -38,7 +38,7 @@ export function Marquee() {
  return (
  <li
  key={i}
- className="flex shrink-0 items-center gap-2.5 px-7 text-muted"
+ className="flex shrink-0 items-center gap-2.5 px-7 text-ink/80"
  >
  <Icon size={18} aria-hidden="true" />
  <span className="text-sm font-medium tracking-tight">{t.label}</span>
