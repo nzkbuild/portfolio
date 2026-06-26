@@ -34,7 +34,7 @@ export const projects: Project[] = [
  summary:
  "Adults lose track of the boring but important details of life across email, drawers, and memory. Boring App keeps them in one private place, fully offline, with on-device document scanning and an encrypted lock.",
  impact:
- "Taken from idea to a published product on Google Play, designed, built, and shipped entirely solo.",
+ "Live on Google Play with around 30 monthly active users across Malaysia, India, Hong Kong, and Singapore. Designed, built, and shipped entirely solo.",
  highlights: [
  "Works fully offline, nothing collected, no ads",
  "On-device scanning and search inside scanned pages",
