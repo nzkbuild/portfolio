@@ -57,7 +57,7 @@ export function SiteFooter() {
  </div>
  </div>
  <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
- <span>(c) {new Date().getFullYear()} Muhammad Nabil Zikri</span>
+ <span>&copy; {new Date().getFullYear()} Muhammad Nabil Zikri</span>
  <span>Johor Bahru, Malaysia</span>
  </div>
  </div>

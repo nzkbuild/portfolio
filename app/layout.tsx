@@ -1,14 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Newsreader } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { BackToTop } from "@/components/site/back-to-top";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const newsreader = Newsreader({
+const display = Space_Grotesk({
  subsets: ["latin"],
- variable: "--font-newsreader",
+ variable: "--font-display",
+ weight: ["400", "500", "600", "700"],
  display: "swap",
- style: ["normal", "italic"],
+});
+const mono = IBM_Plex_Mono({
+ subsets: ["latin"],
+ variable: "--font-mono-ibm",
+ weight: ["400", "500", "600"],
+ display: "swap",
 });
 
 const siteUrl = "https://www.nzkbuild.xyz";
@@ -48,11 +53,7 @@ export default function RootLayout({
  children,
 }: Readonly<{ children: React.ReactNode }>) {
  return (
- <html
- lang="en"
- suppressHydrationWarning
- className={`${inter.variable} ${newsreader.variable}`}
- >
+ <html lang="en" suppressHydrationWarning className={`${display.variable} ${mono.variable}`}>
  <body className="font-sans antialiased">
  <script dangerouslySetInnerHTML={{ __html: themeScript }} />
  <div className="grain" aria-hidden="true" />
