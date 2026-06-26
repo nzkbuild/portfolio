@@ -11,7 +11,7 @@ export function SectionHead({
 }) {
  return (
  <header className="mb-12 sm:mb-16">
- <div className="flex items-center justify-between gap-4">
+ <div className="flex items-center justify-between gap-4 border-b border-line pb-3">
  <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
  {index} / {label}
  </span>

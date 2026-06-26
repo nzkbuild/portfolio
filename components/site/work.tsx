@@ -30,9 +30,9 @@ function Shots({ project }: { project: Project }) {
 
 function Field({ k, children }: { k: string; children: React.ReactNode }) {
  return (
- <div className="flex items-baseline justify-between gap-4 border-b border-line py-2">
+ <div className="border-b border-line py-2.5">
  <dt className="font-mono text-[11px] uppercase tracking-[0.15em] text-faint">{k}</dt>
- <dd className="text-right font-mono text-xs text-ink">{children}</dd>
+ <dd className="mt-1 font-mono text-sm text-ink">{children}</dd>
  </div>
  );
 }

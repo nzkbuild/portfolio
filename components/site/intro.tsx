@@ -16,29 +16,21 @@ const secondary = [
 export function Intro() {
  return (
  <section className="border-b border-line">
- <div className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
+ <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+ <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-12">
+ <div className="lg:col-span-7">
  <p className="rise font-mono text-xs uppercase tracking-[0.2em] text-faint" style={{ animationDelay: "0ms" }}>
  Profile &mdash; nzkbuild / 2026
  </p>
- <h1 className="rise mt-7 max-w-4xl text-[clamp(2.5rem,7vw,5.25rem)] font-bold leading-[0.98] tracking-tight text-ink" style={{ animationDelay: "80ms" }}>
+ <h1 className="rise mt-6 text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[0.98] tracking-tight text-ink" style={{ animationDelay: "80ms" }}>
  I turn messy operations into software that ships.
  </h1>
- <p className="rise mt-8 max-w-2xl text-lg leading-relaxed text-muted" style={{ animationDelay: "160ms" }}>
- Operations and admin by training, a builder by habit. I shipped Boring App
- to Google Play on my own, and I build internal tools that replace
+ <p className="rise mt-7 max-w-xl text-lg leading-relaxed text-muted" style={{ animationDelay: "160ms" }}>
+ Operations and admin by training, a builder by habit. I shipped Boring
+ App to Google Play on my own, and I build internal tools that replace
  spreadsheet chaos.
  </p>
-
- <dl className="rise mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2" style={{ animationDelay: "240ms" }}>
- {profile.map((p) => (
- <div key={p.k} className="bg-paper p-5">
- <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">{p.k}</dt>
- <dd className="mt-1.5 text-sm text-ink">{p.v}</dd>
- </div>
- ))}
- </dl>
-
- <div className="rise mt-10 flex flex-wrap items-center gap-3" style={{ animationDelay: "320ms" }}>
+ <div className="rise mt-9 flex flex-wrap items-center gap-x-3 gap-y-4" style={{ animationDelay: "240ms" }}>
  <a href="#work" className="group inline-flex items-center gap-2 rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-transform active:scale-95">
  View my work
  <ArrowUpRight size={16} strokeWidth={2} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -47,12 +39,25 @@ export function Intro() {
  <Mail size={16} strokeWidth={1.75} />
  Get in touch
  </a>
- <div className="ml-1 flex items-center gap-4 font-mono text-xs text-muted">
+ <div className="flex items-center gap-4 pl-1 font-mono text-xs text-muted">
  {secondary.map((l) => (
  <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">
  {l.label}
  </a>
  ))}
+ </div>
+ </div>
+ </div>
+
+ <div className="rise lg:col-span-5" style={{ animationDelay: "320ms" }}>
+ <dl className="overflow-hidden rounded-sm border border-line">
+ {profile.map((p, i) => (
+ <div key={p.k} className={i > 0 ? "border-t border-line p-4" : "p-4"}>
+ <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">{p.k}</dt>
+ <dd className="mt-1.5 text-sm text-ink">{p.v}</dd>
+ </div>
+ ))}
+ </dl>
  </div>
  </div>
  </div>
