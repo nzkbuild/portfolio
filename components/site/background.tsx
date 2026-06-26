@@ -1,4 +1,5 @@
 import { timeline, skills } from "@/lib/data";
+import { Reveal } from "@/components/site/reveal";
 
 export function Background() {
  return (
@@ -8,6 +9,7 @@ export function Background() {
  Background
  </h2>
 
+ <Reveal>
  <ol className="space-y-7 sm:space-y-8">
  {timeline.map((t) => (
  <li
@@ -23,10 +25,11 @@ export function Background() {
  </li>
  ))}
  </ol>
+ </Reveal>
 
  <div className="mt-12 grid gap-8 sm:mt-16 sm:grid-cols-3">
- {skills.map((g) => (
- <div key={g.label}>
+ {skills.map((g, i) => (
+ <Reveal key={g.label} delay={i * 90}>
  <h3 className="font-serif text-base text-ink">{g.label}</h3>
  <ul className="mt-3 space-y-1.5">
  {g.items.map((it) => (
@@ -35,7 +38,7 @@ export function Background() {
  </li>
  ))}
  </ul>
- </div>
+ </Reveal>
  ))}
  </div>
  </div>

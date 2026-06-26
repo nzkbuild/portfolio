@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
@@ -31,9 +31,20 @@ function ThemeToggle() {
  type="button"
  onClick={toggle}
  aria-label="Toggle dark mode"
- className="p-2 text-muted transition-colors hover:text-ink"
+ className="p-2 text-muted transition-colors hover:text-ink active:scale-90"
  >
- {dark ? <Sun size={18} strokeWidth={1.75} /> : <Moon size={18} strokeWidth={1.75} />}
+ <span className="relative block h-[18px] w-[18px]">
+ <Sun
+ size={18}
+ strokeWidth={1.75}
+ className={`absolute inset-0 transition-all duration-300 ${dark ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"}`}
+ />
+ <Moon
+ size={18}
+ strokeWidth={1.75}
+ className={`absolute inset-0 transition-all duration-300 ${dark ? "rotate-90 opacity-0" : "rotate-0 opacity-100"}`}
+ />
+ </span>
  </button>
  );
 }
@@ -42,14 +53,25 @@ export function Header() {
  const [open, setOpen] = useState(false);
  const [scrolled, setScrolled] = useState(false);
  const [active, setActive] = useState("");
+ const progressRef = useRef<HTMLDivElement>(null);
 
  useEffect(() => {
- const onScroll = () => setScrolled(window.scrollY > 8);
+ const onScroll = () => {
+ setScrolled(window.scrollY > 8);
+ const el = progressRef.current;
+ if (el) {
+ const h = document.documentElement;
+ const max = h.scrollHeight - h.clientHeight;
+ el.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+ }
+ };
  const raf = requestAnimationFrame(onScroll);
  window.addEventListener("scroll", onScroll, { passive: true });
+ window.addEventListener("resize", onScroll, { passive: true });
  return () => {
  cancelAnimationFrame(raf);
  window.removeEventListener("scroll", onScroll);
+ window.removeEventListener("resize", onScroll);
  };
  }, []);
 
@@ -101,11 +123,16 @@ export function Header() {
  <a
  key={item.id}
  href={item.href}
- className={`px-3 py-2 transition-colors ${
+ className={`relative px-3 py-2 transition-colors ${
  active === item.id ? "text-ink" : "text-muted hover:text-ink"
  }`}
  >
  {item.label}
+ <span
+ className={`absolute inset-x-3 -bottom-0.5 h-px origin-left bg-ink transition-transform duration-300 ${
+ active === item.id ? "scale-x-100" : "scale-x-0"
+ }`}
+ />
  </a>
  ))}
  </nav>
@@ -118,12 +145,18 @@ export function Header() {
  aria-expanded={open}
  aria-controls="mobile-menu"
  onClick={() => setOpen((v) => !v)}
- className="p-2 text-ink sm:hidden"
+ className="p-2 text-ink transition-transform active:scale-90 sm:hidden"
  >
  {open ? <X size={22} strokeWidth={1.75} /> : <Menu size={22} strokeWidth={1.75} />}
  </button>
  </div>
  </div>
+
+ <div
+ ref={progressRef}
+ aria-hidden="true"
+ className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-accent/60"
+ />
 
  {open && (
  <nav id="mobile-menu" className="border-t border-line bg-paper px-6 pb-2 sm:hidden">

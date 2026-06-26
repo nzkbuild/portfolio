@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 export function Reveal({
  children,
+ delay = 0,
  className = "",
 }: {
  children: React.ReactNode;
+ delay?: number;
  className?: string;
 }) {
  const ref = useRef<HTMLDivElement>(null);
@@ -28,14 +30,18 @@ export function Reveal({
  }
  });
  },
- { rootMargin: "0px 0px -10% 0px" }
+ { rootMargin: "0px 0px -12% 0px" }
  );
  observer.observe(el);
  return () => observer.disconnect();
  }, []);
 
  return (
- <div ref={ref} className={`reveal ${shown ? "is-visible" : ""} ${className}`.trim()}>
+ <div
+ ref={ref}
+ className={`reveal ${shown ? "is-visible" : ""} ${className}`.trim()}
+ style={{ transitionDelay: `${delay}ms` }}
+ >
  {children}
  </div>
  );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/lib/data";
+import { Reveal } from "@/components/site/reveal";
 
 function Shots({ project }: { project: Project }) {
  if (!project.shots?.length) return null;
@@ -11,9 +12,15 @@ function Shots({ project }: { project: Project }) {
  {project.shots.map((s) => (
  <div
  key={s.src}
- className="relative h-[420px] w-[200px] shrink-0 overflow-hidden rounded-xl border border-line bg-surface"
+ className="group relative h-[420px] w-[200px] shrink-0 overflow-hidden rounded-xl border border-line bg-surface"
  >
- <Image src={s.src} alt={s.alt} fill sizes="200px" className="object-contain" />
+ <Image
+ src={s.src}
+ alt={s.alt}
+ fill
+ sizes="200px"
+ className="object-contain transition-transform duration-[600ms] ease-[var(--ease-out-soft)] group-hover:scale-[1.04]"
+ />
  </div>
  ))}
  </div>
@@ -25,14 +32,14 @@ function Shots({ project }: { project: Project }) {
  {project.shots.map((s) => (
  <div
  key={s.src}
- className="relative aspect-video overflow-hidden rounded-xl border border-line bg-surface"
+ className="group relative aspect-video overflow-hidden rounded-xl border border-line bg-surface"
  >
  <Image
  src={s.src}
  alt={s.alt}
  fill
  sizes="(min-width: 640px) 50vw, 100vw"
- className="object-cover object-top"
+ className="object-cover object-top transition-transform duration-[600ms] ease-[var(--ease-out-soft)] group-hover:scale-[1.04]"
  />
  </div>
  ))}
@@ -55,17 +62,21 @@ function Tags({ items }: { items: string[] }) {
 function ProjectLinks({ project }: { project: Project }) {
  if (!project.links?.length) return null;
  return (
- <div className="mt-3 flex flex-wrap items-center gap-x-4">
+ <div className="mt-3 flex flex-wrap items-center gap-x-2">
  {project.links.map((l) => (
  <a
  key={l.href}
  href={l.href}
  target="_blank"
  rel="noopener noreferrer"
- className="inline-flex items-center gap-1.5 py-1.5 text-sm text-accent transition-colors hover:text-accent-ink"
+ className="group/link -mx-2 inline-flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-accent transition-all hover:bg-accent/10 hover:text-accent-ink active:scale-95"
  >
  {l.label}
- <ArrowUpRight size={14} strokeWidth={2} />
+ <ArrowUpRight
+ size={14}
+ strokeWidth={2}
+ className="transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
+ />
  </a>
  ))}
  </div>
@@ -84,8 +95,9 @@ export function Work() {
  </h2>
 
  <div className="space-y-12 sm:space-y-16">
- {visual.map((p) => (
- <article key={p.id}>
+ {visual.map((p, i) => (
+ <Reveal key={p.id} delay={Math.min(i * 80, 200)}>
+ <article>
  <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
  <h3 className="font-serif text-2xl text-ink sm:text-3xl">{p.title}</h3>
  <span className="text-xs font-medium uppercase tracking-wider text-accent">
@@ -108,12 +120,14 @@ export function Work() {
  <ProjectLinks project={p} />
  <Shots project={p} />
  </article>
+ </Reveal>
  ))}
  </div>
 
  <div className="mt-14 grid gap-x-8 gap-y-8 border-t border-line pt-10 sm:mt-16 sm:grid-cols-2">
- {textOnly.map((p) => (
- <article key={p.id}>
+ {textOnly.map((p, i) => (
+ <Reveal key={p.id} delay={Math.min(i * 70, 210)}>
+ <article>
  <div className="flex items-baseline justify-between gap-x-3">
  <h3 className="font-serif text-lg text-ink">{p.title}</h3>
  <span className="text-xs uppercase tracking-wider text-faint">{p.year}</span>
@@ -128,6 +142,7 @@ export function Work() {
  ))}
  </ul>
  </article>
+ </Reveal>
  ))}
  </div>
  </div>
