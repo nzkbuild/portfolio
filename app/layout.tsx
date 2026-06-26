@@ -12,9 +12,10 @@ const newsreader = Newsreader({
 
 const siteUrl = "https://www.nzkbuild.xyz";
 
+const themeScript = `(function(){try{document.documentElement.classList.add("js");var t=localStorage.getItem("theme");var m=window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&m)){document.documentElement.classList.add("dark");}}catch(e){}})();`;
+
 export const viewport: Viewport = {
- themeColor: "#faf8f4",
- colorScheme: "light",
+ colorScheme: "light dark",
  width: "device-width",
  initialScale: 1,
 };
@@ -46,8 +47,16 @@ export default function RootLayout({
  children,
 }: Readonly<{ children: React.ReactNode }>) {
  return (
- <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
- <body className="font-sans antialiased">{children}</body>
+ <html
+ lang="en"
+ suppressHydrationWarning
+ className={`${inter.variable} ${newsreader.variable}`}
+ >
+ <body className="font-sans antialiased">
+ <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+ {children}
+ </body>
  </html>
  );
 }
+

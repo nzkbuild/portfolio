@@ -2,21 +2,31 @@
 
 /*
  Calm editorial design system.
- Warm paper background, ink text, one restrained accent.
- Serif display (Newsreader) + clean sans body (Inter).
+ Light (warm paper) + dark, one restrained accent.
 */
 @theme {
  --color-paper: #faf8f4;
  --color-surface: #ffffff;
  --color-ink: #211f1b;
- --color-muted: #6a655c;
- --color-faint: #9b958a;
- --color-line: #e9e4d9;
+ --color-muted: #645f57;
+ --color-faint: #767065;
+ --color-line: #e4dfd3;
  --color-accent: #2f5e8e;
  --color-accent-ink: #234a73;
 
  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
  --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+}
+
+html.dark {
+ --color-paper: #181612;
+ --color-surface: #211e18;
+ --color-ink: #f4f0e7;
+ --color-muted: #b8b1a3;
+ --color-faint: #9a9484;
+ --color-line: #332f28;
+ --color-accent: #8fb6e3;
+ --color-accent-ink: #aacaee;
 }
 
 @layer base {
@@ -25,6 +35,7 @@
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
  scroll-behavior: smooth;
+ scroll-padding-top: 5rem;
  }
 
  body {
@@ -32,12 +43,10 @@
  color: var(--color-ink);
  font-family: var(--font-sans);
  line-height: 1.65;
+ transition: background-color 0.3s ease, color 0.3s ease;
  }
 
- h1,
- h2,
- h3,
- h4 {
+ h1, h2, h3, h4 {
  font-family: var(--font-serif);
  color: var(--color-ink);
  font-weight: 500;
@@ -45,21 +54,32 @@
  line-height: 1.12;
  }
 
- a {
- color: inherit;
- text-underline-offset: 3px;
+ a { color: inherit; text-underline-offset: 3px; }
+
+ :focus-visible {
+ outline: 2px solid var(--color-accent);
+ outline-offset: 2px;
+ border-radius: 2px;
  }
 
- ::selection {
- background-color: var(--color-ink);
- color: var(--color-paper);
- }
+ ::selection { background-color: var(--color-ink); color: var(--color-paper); }
 }
 
 @layer utilities {
  .text-balance { text-wrap: balance; }
  .text-pretty { text-wrap: pretty; }
- .hairline { border-color: var(--color-line); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+ .js .reveal {
+ opacity: 0;
+ transform: translateY(12px);
+ transition: opacity 0.6s ease, transform 0.6s ease;
+ }
+ .js .reveal.is-visible {
+ opacity: 1;
+ transform: none;
+ }
 }
 
 @media (prefers-reduced-motion: reduce) {

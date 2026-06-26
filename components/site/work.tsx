@@ -7,13 +7,13 @@ function Shots({ project }: { project: Project }) {
 
  if (project.shotStyle === "phone") {
  return (
- <div className="mt-8 flex gap-4 overflow-x-auto pb-2">
+ <div className="mt-7 flex gap-4 overflow-x-auto pb-2 sm:mt-8">
  {project.shots.map((s) => (
  <div
  key={s.src}
- className="relative h-[440px] w-[210px] shrink-0 overflow-hidden rounded-xl border border-line bg-surface"
+ className="relative h-[420px] w-[200px] shrink-0 overflow-hidden rounded-xl border border-line bg-surface"
  >
- <Image src={s.src} alt={s.alt} fill sizes="210px" className="object-contain" />
+ <Image src={s.src} alt={s.alt} fill sizes="200px" className="object-contain" />
  </div>
  ))}
  </div>
@@ -21,7 +21,7 @@ function Shots({ project }: { project: Project }) {
  }
 
  return (
- <div className="mt-8 grid gap-4 sm:grid-cols-2">
+ <div className="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2">
  {project.shots.map((s) => (
  <div
  key={s.src}
@@ -42,7 +42,7 @@ function Shots({ project }: { project: Project }) {
 
 function Tags({ items }: { items: string[] }) {
  return (
- <ul className="mt-6 flex flex-wrap gap-2">
+ <ul className="mt-5 flex flex-wrap gap-2">
  {items.map((t) => (
  <li key={t} className="rounded-full border border-line px-3 py-1 text-xs text-muted">
  {t}
@@ -55,14 +55,14 @@ function Tags({ items }: { items: string[] }) {
 function ProjectLinks({ project }: { project: Project }) {
  if (!project.links?.length) return null;
  return (
- <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
+ <div className="mt-3 flex flex-wrap items-center gap-x-4">
  {project.links.map((l) => (
  <a
  key={l.href}
  href={l.href}
  target="_blank"
  rel="noopener noreferrer"
- className="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-ink"
+ className="inline-flex items-center gap-1.5 py-1.5 text-sm text-accent transition-colors hover:text-accent-ink"
  >
  {l.label}
  <ArrowUpRight size={14} strokeWidth={2} />
@@ -78,20 +78,24 @@ export function Work() {
 
  return (
  <section id="work" className="border-t border-line">
- <div className="mx-auto max-w-3xl px-6 py-20 sm:py-24">
- <p className="mb-12 text-xs uppercase tracking-[0.18em] text-faint">Selected work</p>
+ <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+ <h2 className="mb-10 font-sans text-xs font-medium uppercase tracking-[0.18em] text-faint sm:mb-12">
+ Selected work
+ </h2>
 
- <div className="space-y-16">
+ <div className="space-y-12 sm:space-y-16">
  {visual.map((p) => (
  <article key={p.id}>
- <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
- <h2 className="font-serif text-2xl text-ink sm:text-3xl">{p.title}</h2>
- <span className="text-xs uppercase tracking-wider text-accent">{p.status}</span>
+ <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
+ <h3 className="font-serif text-2xl text-ink sm:text-3xl">{p.title}</h3>
+ <span className="text-xs font-medium uppercase tracking-wider text-accent">
+ {p.status}
+ </span>
  </div>
- <p className="mt-2 text-base text-muted">{p.subtitle}</p>
- <p className="mt-5 leading-relaxed text-ink">{p.summary}</p>
+ <p className="mt-2 text-[15px] text-muted sm:text-base">{p.subtitle}</p>
+ <p className="mt-4 text-[15px] leading-relaxed text-ink sm:text-base">{p.summary}</p>
 
- <ul className="mt-6 space-y-2">
+ <ul className="mt-5 space-y-2">
  {p.highlights.map((h) => (
  <li key={h} className="flex gap-3 text-sm text-muted">
  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
@@ -107,41 +111,25 @@ export function Work() {
  ))}
  </div>
 
- <ul className="mt-16 border-t border-line">
+ <div className="mt-14 grid gap-x-8 gap-y-8 border-t border-line pt-10 sm:mt-16 sm:grid-cols-2">
  {textOnly.map((p) => (
- <li key={p.id} className="border-b border-line py-6">
- <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
- <h3 className="font-serif text-xl text-ink">{p.title}</h3>
- <span className="text-xs uppercase tracking-wider text-faint">
- {p.year} &middot; {p.status}
- </span>
+ <article key={p.id}>
+ <div className="flex items-baseline justify-between gap-x-3">
+ <h3 className="font-serif text-lg text-ink">{p.title}</h3>
+ <span className="text-xs uppercase tracking-wider text-faint">{p.year}</span>
  </div>
  <p className="mt-1 text-sm text-muted">{p.subtitle}</p>
- <p className="mt-3 text-sm leading-relaxed text-muted">{p.summary}</p>
- <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
- <ul className="flex flex-wrap gap-2">
+ <p className="mt-2 text-sm leading-relaxed text-muted">{p.summary}</p>
+ <ul className="mt-3 flex flex-wrap gap-2">
  {p.tech.map((t) => (
- <li key={t} className="rounded-full border border-line px-2.5 py-0.5 text-xs text-muted">
+ <li key={t} className="rounded-full border border-line px-2.5 py-0.5 text-[11px] text-muted">
  {t}
  </li>
  ))}
  </ul>
- {p.links?.map((lnk) => (
- <a
- key={lnk.href}
- href={lnk.href}
- target="_blank"
- rel="noopener noreferrer"
- className="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-ink"
- >
- {lnk.label}
- <ArrowUpRight size={13} strokeWidth={2} />
- </a>
+ </article>
  ))}
  </div>
- </li>
- ))}
- </ul>
  </div>
  </section>
  );
