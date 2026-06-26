@@ -119,7 +119,7 @@ export function Header() {
  </Link>
 
  <div className="-mr-2 flex items-center gap-1">
- <nav className="-my-2 hidden items-center gap-1 text-sm sm:flex">
+ <nav className="-my-2 hidden items-center gap-1 font-mono text-xs uppercase tracking-wider sm:flex">
  {nav.map((item) => (
  <a
  key={item.id}
@@ -166,7 +166,7 @@ export function Header() {
  key={item.id}
  href={item.href}
  onClick={() => setOpen(false)}
- className={`block border-b border-line py-3 text-base last:border-b-0 ${
+ className={`block border-b border-line py-3 font-mono text-sm uppercase tracking-wider last:border-b-0 ${
  active === item.id ? "text-ink" : "text-muted"
  }`}
  >
