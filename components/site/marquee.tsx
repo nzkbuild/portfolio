@@ -15,13 +15,13 @@ const tools = [
 export function Marquee() {
  const row = [...tools, ...tools];
  return (
- <section aria-label="Tools and technologies" className="border-y border-line py-7 sm:py-9">
- <div className="marquee-mask overflow-hidden">
- <ul className="marquee-track">
+ <section aria-label="Tools and technologies" className="overflow-hidden border-y border-line py-7 sm:py-9">
+ <div className="marquee-mask">
+ <ul className="marquee-track flex w-max items-center">
  {row.map((t, i) => (
  <li
  key={i}
- className="mx-5 flex items-center gap-5 whitespace-nowrap font-serif text-2xl text-faint sm:mx-7 sm:text-3xl"
+ className="flex shrink-0 items-center gap-5 whitespace-nowrap px-5 font-serif text-2xl text-faint sm:px-7 sm:text-3xl"
  >
  {t}
  <span aria-hidden="true" className="text-accent">&middot;</span>
