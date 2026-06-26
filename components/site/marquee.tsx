@@ -25,7 +25,7 @@ const tools: { Icon: IconType; label: string }[] = [
 ];
 
 export function Marquee() {
- const row = [...tools, ...tools];
+ const row = [...tools, ...tools, ...tools, ...tools];
  return (
  <section
  aria-label="Tools I work with, across operations and engineering"

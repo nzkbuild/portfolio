@@ -5,6 +5,7 @@ import { Value } from "@/components/site/value";
 import { Work } from "@/components/site/work";
 import { Background } from "@/components/site/background";
 import { Contact } from "@/components/site/contact";
+import { SiteFooter } from "@/components/site/footer";
 
 export default function Home() {
  return (
@@ -18,6 +19,7 @@ export default function Home() {
  <Background />
  <Contact />
  </main>
+ <SiteFooter />
  </>
  );
 }

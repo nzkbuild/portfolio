@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { Wordmark } from "@/components/site/wordmark";
 
 const nav = [
  { label: "Work", href: "#work", id: "work" },
@@ -112,9 +113,9 @@ export function Header() {
  <Link
  href="/"
  onClick={() => setOpen(false)}
- className="-my-1 py-1 font-serif text-lg tracking-tight text-ink"
+ aria-label="nzkbuild home" className="-my-1 inline-block py-1"
  >
- Nabil Zikri
+ <Wordmark />
  </Link>
 
  <div className="-mr-2 flex items-center gap-1">
