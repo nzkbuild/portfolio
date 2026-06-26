@@ -57,40 +57,15 @@ export const projects: Project[] = [
  featured: true,
  },
  {
- id: "kios",
- title: "KIOS",
- subtitle: "An internal operations tool for a KWSP branch.",
- year: "2025",
- status: "In use",
- summary:
- "A KWSP branch tracked programs, employers, and staff across several disconnected spreadsheets, which was slow and error-prone. I built KIOS during my Prot\u00e9g\u00e9 placement to bring it into one system.",
- impact:
- "Replaced the spreadsheet sprawl with one shared system the branch uses every day, built and refined from real user feedback.",
- highlights: [
- "One shared system in place of several spreadsheets",
- "Role-based access with a simple PIN sign-in",
- "Designed, built, and deployed end to end",
- ],
- tech: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS"],
- links: [{ label: "Source", href: "https://github.com/nzkbuild/kios-final" }],
- shotStyle: "wide",
- shots: [
- { src: "/ref/dashboard.png", alt: "KIOS dashboard" },
- { src: "/ref/programs-page.png", alt: "KIOS programs page" },
- { src: "/ref/employers-page.png", alt: "KIOS employers page" },
- { src: "/ref/staff-management-page.png", alt: "KIOS staff management page" },
- ],
- },
- {
  id: "insurance-landing",
  title: "Insurance Agent Landing Page",
  subtitle: "A landing page built to turn visitors into enquiries.",
  year: "2026",
- status: "Completed",
+ status: "Live",
  summary:
  "An insurance agent needed a clear, fast way to introduce their services and capture leads. I designed and built a focused landing page: hero, services, reasons to choose, how it works, FAQ, and a contact form.",
  impact:
- "A fast, mobile-first page that gives the agent a credible home and a clear path to enquiries.",
+ "Live for the client: a fast, mobile-first page that gives them a credible home and a clear path to enquiries.",
  highlights: [
  "Clear services and trust-building sections",
  "FAQ and a simple enquiry form",
@@ -153,7 +128,7 @@ export const timeline: TimelineEntry[] = [
  period: "Aug 2025 - Feb 2026",
  role: "Prot\u00e9g\u00e9, Relationship & Advisory",
  org: "KWSP (EPF), Kluang",
- note: "Supported daily branch administration: member documentation, record updates, and reporting. Built KIOS to move manual tracking into one simple system.",
+ note: "Supported daily branch administration: member documentation, record updates, reporting, and filing. At my branch head request, I built a small internal tool, my first real attempt at software. It stayed an unfinished internal experiment, but it is what pulled me into development.",
  kind: "work",
  },
  {
@@ -202,7 +177,7 @@ export const skills: SkillGroup[] = [
  },
  {
  label: "Everyday tools",
- items: ["Excel & Microsoft Office", "AI-assisted drafting"],
+ items: ["Microsoft Office & Excel", "AI-assisted drafting", "Vercel"],
  },
 ];
 
