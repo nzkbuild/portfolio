@@ -63,7 +63,7 @@ export function Work() {
 
  return (
  <section id="work" className="border-t border-line">
- <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+ <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
  <header className="mb-14 sm:mb-20">
  <p className="font-mono text-xs uppercase tracking-[0.18em] text-faint">Selected work</p>
  <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-tight text-ink sm:text-5xl">

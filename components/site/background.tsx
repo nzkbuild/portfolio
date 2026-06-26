@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/reveal";
 
 export function Background() {
  return (
- <section id="background" className="border-t border-line">
+ <section id="background" className="border-t border-line bg-surface/60">
  <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
  <header className="mb-12 sm:mb-16">
  <p className="font-mono text-xs uppercase tracking-[0.18em] text-faint">Background</p>
