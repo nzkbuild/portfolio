@@ -15,6 +15,7 @@ export interface Project {
  year: string;
  status: string;
  summary: string;
+ impact?: string;
  highlights: string[];
  tech: string[];
  links?: ProjectLink[];
@@ -27,16 +28,17 @@ export const projects: Project[] = [
  {
  id: "boring-app",
  title: "Boring App",
- subtitle:
- "A private place to keep and find important documents, numbers, and dates.",
+ subtitle: "A private place to keep and find important documents, numbers, and dates.",
  year: "2026",
  status: "Live on Google Play",
  summary:
- "A calm, offline Android app for the boring but important parts of adult life: documents, account numbers, renewals, and appointments. No account, no cloud, nothing leaves the phone. I built and launched it solo, from the product idea to a published app on Google Play.",
+ "Adults lose track of the boring but important details of life across email, drawers, and memory. Boring App keeps them in one private place, fully offline, with on-device document scanning and an encrypted lock.",
+ impact:
+ "Taken from idea to a published product on Google Play, designed, built, and shipped entirely solo.",
  highlights: [
- "Works fully offline, with nothing collected and no ads",
- "On-device document scanning and search inside scanned pages",
- "Encrypted PIN lock (AES-256) with optional encrypted backups",
+ "Works fully offline, nothing collected, no ads",
+ "On-device scanning and search inside scanned pages",
+ "Encrypted PIN lock (AES-256) and encrypted backups",
  "One-time purchase, no subscription",
  ],
  tech: ["React", "Capacitor", "Android", "IndexedDB", "WebCrypto", "Tesseract.js"],
@@ -57,15 +59,17 @@ export const projects: Project[] = [
  {
  id: "kios",
  title: "KIOS",
- subtitle: "An internal tool that replaced scattered spreadsheets at a KWSP branch.",
+ subtitle: "An internal operations tool for a KWSP branch.",
  year: "2025",
  status: "In use",
  summary:
- "Built during my Prot\u00e9g\u00e9 placement at KWSP Kluang to track programs, employers, and staff in one place instead of several spreadsheets. I designed it, built it, and adjusted it with feedback from the people using it every day.",
+ "A KWSP branch tracked programs, employers, and staff across several disconnected spreadsheets, which was slow and error-prone. I built KIOS during my Prot\u00e9g\u00e9 placement to bring it into one system.",
+ impact:
+ "Replaced the spreadsheet sprawl with one shared system the branch uses every day, built and refined from real user feedback.",
  highlights: [
  "One shared system in place of several spreadsheets",
  "Role-based access with a simple PIN sign-in",
- "Built and refined from real user feedback",
+ "Designed, built, and deployed end to end",
  ],
  tech: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS"],
  links: [{ label: "Source", href: "https://github.com/nzkbuild/kios-final" }],
@@ -80,11 +84,13 @@ export const projects: Project[] = [
  {
  id: "insurance-landing",
  title: "Insurance Agent Landing Page",
- subtitle: "A landing page built to turn visitors into enquiries for an insurance agent.",
+ subtitle: "A landing page built to turn visitors into enquiries.",
  year: "2026",
  status: "Completed",
  summary:
- "A focused landing page for an insurance agent: a clear hero, a breakdown of services, reasons to choose them, how it works, an FAQ, and a simple contact form. Built to load fast and read clearly on a phone.",
+ "An insurance agent needed a clear, fast way to introduce their services and capture leads. I designed and built a focused landing page: hero, services, reasons to choose, how it works, FAQ, and a contact form.",
+ impact:
+ "A fast, mobile-first page that gives the agent a credible home and a clear path to enquiries.",
  highlights: [
  "Clear services and trust-building sections",
  "FAQ and a simple enquiry form",
@@ -105,7 +111,7 @@ export const projects: Project[] = [
  year: "2023",
  status: "Completed",
  summary:
- "My entry point into programming. A rules-based trading system written in MQL4 and MQL5 that took the emotion out of a manual process. It is where I learned state, logic, and testing.",
+ "My entry point into programming. A rules-based trading system in MQL4 and MQL5 that took the emotion out of a manual process and taught me state, logic, and testing.",
  highlights: ["Automated execution on MetaTrader 4 and 5", "Backtested and run on a VPS"],
  tech: ["MQL4", "MQL5", "MetaTrader"],
  },

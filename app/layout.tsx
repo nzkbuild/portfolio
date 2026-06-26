@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
+import { BackToTop } from "@/components/site/back-to-top";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const newsreader = Newsreader({
@@ -56,6 +57,7 @@ export default function RootLayout({
  <script dangerouslySetInnerHTML={{ __html: themeScript }} />
  <div className="grain" aria-hidden="true" />
  {children}
+ <BackToTop />
  </body>
  </html>
  );
