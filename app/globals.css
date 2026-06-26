@@ -6,7 +6,7 @@
  --color-surface: #ffffff;
  --color-ink: #1b1a17;
  --color-muted: #5f5a51;
- --color-faint: #8a8475;
+ --color-faint: #726e5e;
  --color-line: #ddd6c6;
  --color-accent: #2f5e8e;
  --color-accent-ink: #234a73;
@@ -22,7 +22,7 @@ html.dark {
  --color-surface: #161410;
  --color-ink: #f2efe6;
  --color-muted: #b0a99b;
- --color-faint: #7e786b;
+ --color-faint: #8b8576;
  --color-line: #2e2a22;
  --color-accent: #9cc0ec;
  --color-accent-ink: #bcd6f5;
