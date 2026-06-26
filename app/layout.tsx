@@ -54,6 +54,7 @@ export default function RootLayout({
  >
  <body className="font-sans antialiased">
  <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+ <div className="grain" aria-hidden="true" />
  {children}
  </body>
  </html>
