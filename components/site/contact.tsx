@@ -41,12 +41,6 @@ export function Contact() {
  </ul>
  </Reveal>
  </div>
- <footer className="border-t border-line">
- <div className="mx-auto flex max-w-3xl flex-col gap-1 px-6 py-8 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
- <span>Muhammad Nabil Zikri &middot; Johor Bahru, Malaysia</span>
- <span>{new Date().getFullYear()}</span>
- </div>
- </footer>
  </section>
  );
 }
