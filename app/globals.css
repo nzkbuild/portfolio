@@ -1,27 +1,72 @@
 @import "tailwindcss";
-@config "../tailwind.config.js";
+
+/*
+ Calm editorial design system.
+ Warm paper background, ink text, one restrained accent.
+ Serif display (Newsreader) + clean sans body (Inter).
+*/
+@theme {
+ --color-paper: #faf8f4;
+ --color-surface: #ffffff;
+ --color-ink: #211f1b;
+ --color-muted: #6a655c;
+ --color-faint: #9b958a;
+ --color-line: #e9e4d9;
+ --color-accent: #2f5e8e;
+ --color-accent-ink: #234a73;
+
+ --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+ --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+}
 
 @layer base {
-  body {
-    @apply bg-bg-primary text-text-secondary antialiased;
-  }
+ html {
+ text-rendering: optimizeLegibility;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ scroll-behavior: smooth;
+ }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-text-primary font-display font-bold tracking-tight;
-  }
+ body {
+ background-color: var(--color-paper);
+ color: var(--color-ink);
+ font-family: var(--font-sans);
+ line-height: 1.65;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4 {
+ font-family: var(--font-serif);
+ color: var(--color-ink);
+ font-weight: 500;
+ letter-spacing: -0.015em;
+ line-height: 1.12;
+ }
+
+ a {
+ color: inherit;
+ text-underline-offset: 3px;
+ }
+
+ ::selection {
+ background-color: var(--color-ink);
+ color: var(--color-paper);
+ }
 }
 
 @layer utilities {
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-xl border border-glass-border;
-  }
+ .text-balance { text-wrap: balance; }
+ .text-pretty { text-wrap: pretty; }
+ .hairline { border-color: var(--color-line); }
+}
 
-  .text-balance {
-    text-wrap: balance;
-  }
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after {
+ animation-duration: 0.01ms !important;
+ animation-iteration-count: 1 !important;
+ transition-duration: 0.01ms !important;
+ }
 }
