@@ -91,6 +91,7 @@ export const projects: Project[] = [
  "Responsive and fast on mobile",
  ],
  tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+ links: [{ label: "View live", href: "https://naqiudin.netlify.app/" }],
  shotStyle: "wide",
  shots: [
  { src: "/insurance-agent/main.jpg", alt: "Insurance landing page hero" },

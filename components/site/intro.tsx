@@ -7,45 +7,56 @@ const links = [
  { label: "R\u00e9sum\u00e9", href: "https://www.linkedin.com/in/nbzkri/", external: true, icon: FileText },
 ];
 
+const proof = [
+ { label: "Live on Google Play", note: "Boring App, shipped solo" },
+ { label: "In daily use", note: "KIOS, built at KWSP" },
+ { label: "Design to deploy", note: "I own the whole build" },
+];
+
 export function Intro() {
  return (
  <section className="mx-auto max-w-3xl px-6 py-20 sm:py-32">
  <p
- className="rise mb-5 text-xs uppercase tracking-[0.18em] text-faint"
+ className="rise mb-6 text-xs uppercase tracking-[0.18em] text-faint"
  style={{ animationDelay: "0ms" }}
  >
  Johor Bahru, Malaysia &middot; Open to work
  </p>
  <h1
- className="rise text-pretty font-serif text-[2.25rem] leading-[1.08] text-ink sm:text-6xl sm:leading-[1.04]"
+ className="rise text-balance font-serif text-[2.5rem] leading-[1.05] text-ink sm:text-[4rem] sm:leading-[1.02]"
  style={{ animationDelay: "90ms" }}
  >
- Operations and admin, with a habit of building tools.
+ I turn messy operations into software that ships.
  </h1>
- <div
- className="rise mt-8 max-w-prose space-y-4 text-base leading-relaxed text-muted sm:text-lg"
+ <p
+ className="rise mt-8 max-w-prose text-lg leading-relaxed text-muted sm:text-xl"
  style={{ animationDelay: "180ms" }}
  >
- <p>
- I am Nabil, a Business Administration graduate. My background is in
- records, documentation, and member service, and I build simple,
- private software to take the friction out of that kind of work.
- </p>
- <p>
- Most recently I built and launched{" "}
+ I am Nabil, operations and admin by training and a builder by habit. I
+ shipped{" "}
  <a
  href="#work"
  className="text-ink underline decoration-1 underline-offset-4 transition-[text-decoration-thickness] hover:decoration-2"
  >
  Boring App
  </a>{" "}
- on Google Play, a private Android app for keeping the important
- documents, numbers, and dates of everyday life in one place.
+ to Google Play on my own, and I build internal tools that replace
+ spreadsheet chaos.
  </p>
+ <dl
+ className="rise mt-10 grid grid-cols-1 gap-x-8 gap-y-4 border-t border-line pt-6 sm:grid-cols-3"
+ style={{ animationDelay: "260ms" }}
+ >
+ {proof.map((p) => (
+ <div key={p.label}>
+ <dt className="text-sm font-medium text-ink">{p.label}</dt>
+ <dd className="mt-0.5 text-xs text-faint">{p.note}</dd>
  </div>
+ ))}
+ </dl>
  <div
  className="rise -mx-2 mt-10 flex flex-wrap items-center gap-x-1 gap-y-1 text-sm"
- style={{ animationDelay: "270ms" }}
+ style={{ animationDelay: "340ms" }}
  >
  {links.map((l) => {
  const Icon = l.icon;
