@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/site/reveal";
+import { SectionHead } from "@/components/site/section-head";
 
 const proof = [
  { label: "~30 monthly users", note: "Boring App, live across 4 countries" },
@@ -26,33 +27,33 @@ const pillars = [
 
 export function Value() {
  return (
- <section id="approach" className="border-t border-line bg-surface/60">
- <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
- <header className="mb-12 sm:mb-16">
- <p className="font-mono text-xs uppercase tracking-[0.18em] text-faint">Why work with me</p>
- <h2 className="mt-4 max-w-2xl font-serif text-3xl leading-tight text-ink sm:text-5xl">
- The rare mix of operations sense and the ability to build.
- </h2>
- </header>
+ <section id="approach" className="border-t border-line bg-surface/40">
+ <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+ <SectionHead
+ index="01"
+ label="Approach"
+ title="The rare mix of operations sense and the ability to build."
+ meta="Why hire me"
+ />
 
  <Reveal>
- <dl className="grid grid-cols-1 gap-x-8 gap-y-6 border-y border-line py-8 sm:grid-cols-3">
+ <dl className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
  {proof.map((p) => (
- <div key={p.label}>
- <dt className="font-serif text-xl text-ink">{p.label}</dt>
- <dd className="mt-1 text-sm text-faint">{p.note}</dd>
+ <div key={p.label} className="bg-paper p-5">
+ <dt className="text-lg font-bold text-ink">{p.label}</dt>
+ <dd className="mt-1 font-mono text-xs text-faint">{p.note}</dd>
  </div>
  ))}
  </dl>
  </Reveal>
 
- <div className="mt-4 flex flex-col divide-y divide-line">
+ <div className="mt-10 border-t border-line">
  {pillars.map((p, i) => (
- <Reveal key={p.n} delay={i * 80}>
- <div className="grid gap-2 py-8 sm:grid-cols-[4rem_1fr] sm:gap-6">
- <div className="font-mono text-sm text-faint">{p.n}</div>
+ <Reveal key={p.n} delay={i * 70}>
+ <div className="grid gap-3 border-b border-line py-8 sm:grid-cols-[5rem_1fr] sm:gap-8">
+ <span className="font-mono text-sm text-faint">{p.n}</span>
  <div>
- <h3 className="font-serif text-xl text-ink sm:text-2xl">{p.title}</h3>
+ <h3 className="text-xl font-bold text-ink sm:text-2xl">{p.title}</h3>
  <p className="mt-3 max-w-prose leading-relaxed text-muted">{p.body}</p>
  </div>
  </div>
